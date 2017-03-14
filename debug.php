@@ -1,17 +1,17 @@
 <?php
 
 /**
- * funÁıes ˙teis para debugar sistemas PHP
+ * fun√ß√µes √∫teis para debugar sistemas PHP
  */
 
 // defina suas regras para o modo debug
 //define ( 'DEBUG_MODE' , true );
-define ( 'DEBUG_MODE' , (isset($_SERVER['HTTP_DEBUG'])&&$_SERVER['HTTP_DEBUG']==="ASD1F6A51SD5F64GA1DS65F") );
+define ( 'DEBUG_MODE' , (isset($_SERVER['HTTP_DEBUG'])&&$_SERVER['HTTP_DEBUG']==="ABCDEFGH") );
 define ( 'CONSOLE_MODE' , ( isset ( $_SERVER['PROMPT'] ) ) );
 
 /**
- * dump das vari·veis e exit
- * @param mixed todos os par‚metros necess·rios
+ * dump das vari√°veis e exit
+ * @param mixed todos os par√¢metros necess√°rios
  */
 function prd ( ) {
     if ( !defined ( 'DEBUG_MODE' ) || DEBUG_MODE === false ) return ;
@@ -27,8 +27,8 @@ function prd ( ) {
 }
 
 /**
- * dump das vari·veis com fundo vermelho para destacar
- * @param mixed todos os par‚metros necess·rios
+ * dump das vari√°veis com fundo vermelho para destacar
+ * @param mixed todos os par√¢metros necess√°rios
  */
 function pre ( ) {
     $backTrace = debug_backtrace ();
@@ -37,8 +37,8 @@ function pre ( ) {
 }
 
 /**
- * dump das vari·veis com fundo verde para destacar
- * @param mixed todos os par‚metros necess·rios
+ * dump das vari√°veis com fundo verde para destacar
+ * @param mixed todos os par√¢metros necess√°rios
  */
 function prs ( ) {
     $backTrace = debug_backtrace ();
@@ -47,8 +47,8 @@ function prs ( ) {
 }
 
 /**
- * dump das vari·veis com fundo preto
- * @param mixed todos os par‚metros necess·rios
+ * dump das vari√°veis com fundo preto
+ * @param mixed todos os par√¢metros necess√°rios
  */
 function pr ( ) {
     $varList   = func_get_args ( );
@@ -57,8 +57,8 @@ function pr ( ) {
 }
 
 /**
- * dump das vari·veis com fundo preto
- * @param mixed todos os par‚metros necess·rios
+ * dump das vari√°veis com fundo preto
+ * @param mixed todos os par√¢metros necess√°rios
  */
 function pry ( ) {
     $varList   = func_get_args ( );
@@ -67,11 +67,11 @@ function pry ( ) {
 }
 
 /**
- * metodo pra onde ser· roteado todos os outros PRs
- * @param  array(mixed)  $varList    lista de vari·veis para fazer o dump
+ * metodo pra onde ser√° roteado todos os outros PRs
+ * @param  array(mixed)  $varList    lista de vari√°veis para fazer o dump
  * @param  string  $foreground cor para a fonte
  * @param  string  $background cor para o fundo
- * @param  array $backTrace  backtrace, caso queira passar o backtrace de outro mÈtodo ou deixar que seja criado a partir daqui
+ * @param  array $backTrace  backtrace, caso queira passar o backtrace de outro m√©todo ou deixar que seja criado a partir daqui
  */
 function _pr ( $varList = "" , $foreground = "#0F0" , $background = "#000" , $backTrace = false ) {
 
@@ -139,7 +139,7 @@ function _pr ( $varList = "" , $foreground = "#0F0" , $background = "#000" , $ba
         $function = !empty($bt['function'])? $bt['function'] . "( [" . $implode . "] )" : " - FUNCAO DESCONHECIDA - " ;
         $class = !empty($bt['class'])? $bt['class'] : "";
 
-//        @TODO ESCONDER O CAMINHO COMPLETO DO ARQUIVO MOSTRANDO NO M¡XIMO O ULTIMO DIRETORIO E NOME DO ARQUIVO, E AO CLICAR/PASSAR O MOUSE, MOSTRA COMPLETO
+//        @TODO ESCONDER O CAMINHO COMPLETO DO ARQUIVO MOSTRANDO NO M√ÅXIMO O ULTIMO DIRETORIO E NOME DO ARQUIVO, E AO CLICAR/PASSAR O MOUSE, MOSTRA COMPLETO
         echo "$spacePadding<span style=\"margin-top:3px;padding-left:4px;background:#070;color:#000;font-weight:bold;\">\n#$key " . $bt['file'] . ":" . $bt['line'] . " </span> - $class-&gt;" . $function ;
     }
     echo "\n$spacePadding<span style=\"margin - bottom:10px;padding - left:4px;background:#0F0;color:#000;font-weight:bold;line-height:1.5em;\"><a style=\"color:#FFF;background:#000;padding-left:5px;\" onclick=\"document.getElementById('$id').innerHTML=''\" href=\"javascript:;\">fechar este &nbsp;&nbsp;</a><a onclick=\"$('.hf_debug').hide()\" style=\"color:#FFF;background:#000;padding-left:5px;\" href=\"javascript:;\">fechar todos</a></span></pre>";
@@ -155,9 +155,9 @@ function __getLineContent($file,$line){
 }
 
 /**
- * retorna detalhes da vari·vel para simplificar o mÈtodo que faz o dump
- * @param  mixed $mixedVar vari·vel qualquer
- * @return string           detalhes da vari·vel
+ * retorna detalhes da vari√°vel para simplificar o m√©todo que faz o dump
+ * @param  mixed $mixedVar vari√°vel qualquer
+ * @return string           detalhes da vari√°vel
  */
 function _getVarDetails ( $mixedVar ) {
     $output = "Type: " . gettype ( $mixedVar ) . "\n" ;
@@ -172,7 +172,7 @@ function _getVarDetails ( $mixedVar ) {
 
 /**
  * ********************************************************************************************************
- * FUN«’ES EXPERIMENTAIS ABAIXO
+ * FUN√á√ïES EXPERIMENTAIS ABAIXO
  * * ********************************************************************************************************
  */
 function translateError ( $errorMessage ) {
@@ -187,8 +187,8 @@ function translateError ( $errorMessage ) {
 }
 
 /**
- * Tratamento de erro padr„o
- * aqui pode ser definido entre mostrar uma mensagem de erro ou redirecionar para uma p·gina de erro
+ * Tratamento de erro padr√£o
+ * aqui pode ser definido entre mostrar uma mensagem de erro ou redirecionar para uma p√°gina de erro
  * procure logar o erro nesse momento
  * */
 function defaultExceptionHandler ( $exception ) {
